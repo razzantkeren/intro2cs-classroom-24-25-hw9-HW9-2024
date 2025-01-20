@@ -2404,7 +2404,7 @@ public class TestHandler {
         MemoryBlock block = new MemoryBlock(10, 1000);
         list.addFirst(block);
         MemoryBlock block2 = new MemoryBlock(20, 2000);
-        String expected = expected = TesterMessagesEnum.ERROR + " IllegalArgumentException: index must be between 0 and size";
+        String expected = TesterMessagesEnum.ERROR + " IllegalArgumentException: index must be between 0 and size";
         boolean actualB = true;
         String actual = "";
         try {
