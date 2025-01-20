@@ -2503,7 +2503,7 @@ public class TestHandler {
     ///// Malloc tests /////
     private boolean mallocTest1() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(20 , 80)\n(0 , 20)\n";
+        String expectedText = "(20 , 80) \n(0 , 20) ";
         String expected = "true";
         String actual = "";
         try {
@@ -2515,10 +2515,10 @@ public class TestHandler {
         }
         return this.tester.test("Malloc a block of memory", expected, actual);
     }
-    
+
     private boolean mallocTest2() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(30 , 70)\n(0 , 10) (10 , 20)\n";
+        String expectedText = "(30 , 70) \n(0 , 10) (10 , 20) ";
         String expected = "true";
         String actual = "";
         try {
@@ -2528,27 +2528,28 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc a block of memory", expected, actual);
+        return this.tester.test("Malloc 2 blocks of memory", expected, actual);
     }
 
     private boolean mallocTest3() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expected = "(80 , 20)\n(0 , 40) (40 , 40)\n";
+        String expectedText = "\n(0 , 40) (40 , 40) (80 , 20) ";
+        String expected = "true";
         String actual = "";
         try {
             int address1 = memorySpace.malloc(40);
             int address2 = memorySpace.malloc(40);
             int address3 = memorySpace.malloc(20);
-            actual += (address1 == 0 && address2 == 40 && address3 == -1 && memorySpace.toString().equals(expected));
+            actual += (address1 == 0 && address2 == 40 && address3 == 80 && memorySpace.toString().equals(expectedText));
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc a block of memory", expected, actual);
+        return this.tester.test("Malloc 3 block of memory to fill", expected, actual);
     }
-    
+
     private boolean mallocTest4() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(60 , 40)\n(0 , 10) (10 , 10) (20 , 10) (30 , 30)\n";
+        String expectedText = "(60 , 40) \n(0 , 10) (10 , 10) (20 , 10) (30 , 30) ";
         String expected = "true";
         String actual = "";
         try {
@@ -2565,7 +2566,7 @@ public class TestHandler {
 
     private boolean mallocTest5() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(60 , 40)\n(0 , 10) (10 , 10) (20 , 10) (30 , 30)\n";
+        String expectedText = "(60 , 40) \n(0 , 10) (10 , 10) (20 , 10) (30 , 30) ";
         String expected = "true";
         String actual = "";
         try {
@@ -2573,7 +2574,7 @@ public class TestHandler {
             int address2 = memorySpace.malloc(10);
             int address3 = memorySpace.malloc(10);
             int address4 = memorySpace.malloc(30);
-            int address5 = memorySpace.malloc(10);
+            int address5 = memorySpace.malloc(50);
             actual += (address1 == 0 && address2 == 10 && address3 == 20 && address4 == 30 && address5 == -1 && memorySpace.toString().equals(expectedText));
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
@@ -2583,7 +2584,7 @@ public class TestHandler {
 
     private boolean mallocTest6() {
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(0 , 100)\n\n";
+        String expectedText = "(0 , 100) \n";
         String expected = "true";
         String actual = "";
         try {
@@ -2594,6 +2595,7 @@ public class TestHandler {
         }
         return this.tester.test("Malloc a block of memory", expected, actual);
     }
+
     ///// Free tests /////
     /// tests handling ///
     private void mainFreeTest() {
@@ -2659,7 +2661,7 @@ public class TestHandler {
 
     private boolean freeTest3(){
         MemorySpace memorySpace = new MemorySpace(100);
-        String expectedText = "(0 , 100)\n";
+        String expectedText = "\n(0 , 100) ";
         String expected = "true";
         String actual = "";
         try {
