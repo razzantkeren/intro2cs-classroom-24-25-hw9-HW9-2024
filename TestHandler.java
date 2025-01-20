@@ -2205,7 +2205,7 @@ public class TestHandler {
             list.remove(1); // block removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block) == -1);
             list.remove(0); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -2255,7 +2255,7 @@ public class TestHandler {
             list.remove(3); // block4 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block3) && list.indexOf(block4) == -1);
             list.remove(0); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block3) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block3) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -2359,7 +2359,7 @@ public class TestHandler {
             list.remove(3); // block5 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block5) == -1);
             list.remove(0); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -2388,11 +2388,11 @@ public class TestHandler {
             list.remove(2); // block4 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block5) && list.indexOf(block4) == -1);
             list.remove(0); // block2 removed
-            actualB = (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block5) && list.indexOf(block2) == -1);
+            actualB = (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block5) && list.indexOf(block2) == -1);
             list.remove(1); // block5 removed
-            actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block3) && list.indexOf(block5) == -1);
+            actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block) && list.indexOf(block5) == -1);
             list.remove(0); // block3 removed
-            actual += (actualB && list.getSize() == 0 && list.getFirst() == null && list.getLast() == null && list.indexOf(block3) == -1);
+            actual += (actualB && list.getSize() == 0 && list.getFirst() == null && list.getLast() == null && list.indexOf(block) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -2404,13 +2404,15 @@ public class TestHandler {
         MemoryBlock block = new MemoryBlock(10, 1000);
         list.addFirst(block);
         MemoryBlock block2 = new MemoryBlock(20, 2000);
-        String expected = "true";
+        String expected = expected = TesterMessagesEnum.ERROR + " IllegalArgumentException: index must be between 0 and size";
         boolean actualB = true;
         String actual = "";
         try {
             actualB = (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block));
             list.remove(block2);
             actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block));
+        } catch (IllegalArgumentException e){
+            actual = TesterMessagesEnum.ERROR + " IllegalArgumentException: " + e.getMessage();
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
