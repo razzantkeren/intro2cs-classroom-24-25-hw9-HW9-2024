@@ -2850,9 +2850,9 @@ public class TestHandler {
 
     private boolean defragTest5(){
         MemorySpace memorySpace = new MemorySpace(100);
-        String expected1 = "\n(0 , 5) (5 , 20) (25 , 20) (45 , 55)\n";
-        String expected2 = "(0 , 5)  (25 , 20)\n(5 , 20) (45 , 55)\n";
-        String expected3 = "(0 , 45)\n(45 , 55)\n";
+        String expected1 = "\n(0 , 5) (5 , 20) (25 , 20) (45 , 55) ";
+        String expected2 = "(0 , 5) (25 , 20) \n(5 , 20) (45 , 55) ";
+        String expected3 = "(0 , 45) \n(45 , 55) ";
         String expected = "true";
         String actual = "";
         boolean actualB = true;
