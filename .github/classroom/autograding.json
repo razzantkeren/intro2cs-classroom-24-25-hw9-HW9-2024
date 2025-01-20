@@ -1,7 +1,7 @@
 {
   "tests": [
     {   
-      "name": "LinkedList class. Adds the given memory block to the beginning of this list.",
+      "name": "LinkedList class. addFirst",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_ADD_FIRST",
       "comparison": "included",
@@ -11,7 +11,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Adds the given memory block to the end of this list.",
+      "name": "LinkedList class. addLast",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_ADD_LAST",
       "comparison": "included",
@@ -21,7 +21,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Gets the memory block located at the given index in this list.",
+      "name": "LinkedList class. getNode",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_GET_NODE",
       "comparison": "included",
@@ -31,7 +31,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Gets the memory block located at the given index in this list.",
+      "name": "LinkedList class. getBlock",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_GET_BLOCK",
       "comparison": "included",
@@ -41,7 +41,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Adds the given memory block to this list.",
+      "name": "LinkedList class. add",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_ADD",
       "comparison": "included",
@@ -51,7 +51,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Gets the index of the node pointing to the given memory block.",
+      "name": "LinkedList class. indexOf",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_INDEX_OF",
       "comparison": "included",
@@ -61,7 +61,7 @@
       "points": 6
     },
     {
-      "name": "LinkedList class. Removes the given node from this list.",
+      "name": "LinkedList class. removeNode",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_REMOVE_NODE",
       "comparison": "included",
@@ -71,7 +71,7 @@
       "points": 8
     },
     {
-      "name": "LinkedList class. Removes the given memory block from this list.",
+      "name": "LinkedList class. removeElement",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_REMOVE_ELEMENT",
       "comparison": "included",
@@ -81,7 +81,7 @@
       "points": 8
     },
     {
-      "name": "LinkedList class. Removes the node at the given index from this list.",
+      "name": "LinkedList class. removeIndex",
       "setup": "javac Test.java",
       "run": "java Test LINKED_LIST_REMOVE_INDEX",
       "comparison": "included",
@@ -91,7 +91,7 @@
       "points": 8
     },
     {
-      "name": "MemorySpace class. Allocates a memory block of the given size.",
+      "name": "MemorySpace class. malloc",
       "setup": "javac Test.java",
       "run": "java Test MEMORY_SPACE_MALLOC",
       "comparison": "included",
@@ -101,7 +101,7 @@
       "points": 15
     },
     {
-      "name": "MemorySpace class. Frees the memory block at the given address.",
+      "name": "MemorySpace class. free",
       "setup": "javac Test.java",
       "run": "java Test MEMORY_SPACE_FREE",
       "comparison": "included",
@@ -111,7 +111,7 @@
       "points": 15
     },
     {
-      "name": "MemorySpace class. Defragments the memory space.",
+      "name": "MemorySpace class. defrag",
       "setup": "javac Test.java",
       "run": "java Test MEMORY_SPACE_DEFRAG",
       "comparison": "included",

@@ -1,17 +1,17 @@
 public enum TesterQuestionEnum {
     // LinkedListTest
-    LINKED_LIST_ADD_FIRST("LinkedList class. Adds the given memory block to the beginning of this list.", 6),
-    LINKED_LIST_ADD_LAST("LinkedList class. Adds the given memory block to the end of this list.", 6),
-    LINKED_LIST_GET_NODE("LinkedList class. Gets the memory block located at the given index in this list.", 6),
-    LINKED_LIST_GET_BLOCK("LinkedList class. Gets the memory block located at the given index in this list.", 6),
-    LINKED_LIST_ADD("LinkedList class. Adds the given memory block to this list.", 6),
-    LINKED_LIST_INDEX_OF("LinkedList class. Gets the index of the node pointing to the given memory block.", 6),
-    LINKED_LIST_REMOVE_NODE("LinkedList class. Removes the given node from this list.", 8),
-    LINKED_LIST_REMOVE_ELEMENT("LinkedList class. Removes the given memory block from this list.", 8),
-    LINKED_LIST_REMOVE_INDEX("LinkedList class. Removes the node at the given index from this list.", 8),
-    MEMORY_SPACE_MALLOC("MemorySpace class. Allocates a memory block of the given size.", 15),
-    MEMORY_SPACE_FREE("MemorySpace class. Frees the memory block at the given address.", 15),
-    MEMORY_SPACE_DEFRAG("MemorySpace class. Defragments the memory space.", 10);
+    LINKED_LIST_ADD_FIRST("LinkedList class. addFirst", 6),
+    LINKED_LIST_ADD_LAST("LinkedList class. addLast", 6),
+    LINKED_LIST_GET_NODE("LinkedList class. getNode", 6),
+    LINKED_LIST_GET_BLOCK("LinkedList class. getBlock", 6),
+    LINKED_LIST_ADD("LinkedList class. add", 6),
+    LINKED_LIST_INDEX_OF("LinkedList class. indexOf", 6),
+    LINKED_LIST_REMOVE_NODE("LinkedList class. removeNode", 8),
+    LINKED_LIST_REMOVE_ELEMENT("LinkedList class. removeElement", 8),
+    LINKED_LIST_REMOVE_INDEX("LinkedList class. removeIndex", 8),
+    MEMORY_SPACE_MALLOC("MemorySpace class. malloc", 15),
+    MEMORY_SPACE_FREE("MemorySpace class. free", 15),
+    MEMORY_SPACE_DEFRAG("MemorySpace class. defrag", 10);
 
     private final String question;
     private final int maxPoints;
