@@ -13,7 +13,7 @@ public class TestHandler {
             case LINKED_LIST_GET_BLOCK:
                 return 8;
 
-            case LINKED_LIST_ADD:
+            case LINKED_LIST_ADD: 
                 return 8;
 
             case LINKED_LIST_ADD_LAST:
@@ -2870,7 +2870,7 @@ public class TestHandler {
     /// HELPER FUNCTIONS
     private LinkedList createLinkedList(MemoryBlock [] blocks) {
         LinkedList list = new LinkedList();
-        for (int i = blocks.length - 1; i >= 0; i++) {
+        for (int i = blocks.length - 1; i >= 0; i--) {
             list.addFirst(blocks[i]);
         }
         return list;
