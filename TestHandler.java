@@ -2544,7 +2544,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc 3 block of memory to fill", expected, actual);
+        return this.tester.test("Malloc 3 blocks of memory to fill all memory space", expected, actual);
     }
 
     private boolean mallocTest4() {
@@ -2561,7 +2561,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc a block of memory", expected, actual);
+        return this.tester.test("Malloc 4 blocks of memory", expected, actual);
     }
 
     private boolean mallocTest5() {
@@ -2579,7 +2579,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc a block of memory", expected, actual);
+        return this.tester.test("Malloc blocks of memory but will fail in last due to lack of space", expected, actual);
     }
 
     private boolean mallocTest6() {
@@ -2593,7 +2593,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Malloc a block of memory", expected, actual);
+        return this.tester.test("Malloc a block of memory bigger than memory space", expected, actual);
     }
 
     ///// Free tests /////
@@ -2688,7 +2688,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Try to free address twice", expected, actual);
+        return this.tester.test("Try to free address twice in a row", expected, actual);
     }
 
     private boolean freeTest5(){
@@ -2709,7 +2709,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Try to malloc after free", expected, actual);
+        return this.tester.test("Try to malloc after freed space", expected, actual);
     }
 
     private boolean freeTest6(){
@@ -2734,7 +2734,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Try to malloc after free", expected, actual);
+        return this.tester.test("Try to malloc after 2 frees that one doesn't fits", expected, actual);
     }
     
     ///// Defrag tests /////
@@ -2845,7 +2845,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("defrag successfully", expected, actual);
+        return this.tester.test("defrag successfully 3 elements", expected, actual);
     }
 
     private boolean defragTest5(){
