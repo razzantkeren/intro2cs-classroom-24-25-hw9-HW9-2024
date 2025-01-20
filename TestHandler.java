@@ -2390,7 +2390,7 @@ public class TestHandler {
             list.remove(0); // block2 removed
             actualB = (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block5) && list.indexOf(block2) == -1);
             list.remove(1); // block5 removed
-            actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block) && list.indexOf(block5) == -1);
+            actualB = (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block) && list.indexOf(block5) == -1);
             list.remove(0); // block3 removed
             actual += (actualB && list.getSize() == 0 && list.getFirst() == null && list.getLast() == null && list.indexOf(block) == -1);
         } catch (Exception e) {
