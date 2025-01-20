@@ -530,7 +530,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("try to get an index that is equal to size", expected, actual);
+        return this.tester.test("Try to get an index that is equal to size", expected, actual);
     }
 
     private boolean getNodeTest7() {
@@ -548,13 +548,13 @@ public class TestHandler {
         String expected = "true";
         String actual = "";
         try {
-            actual += list.getNode(5).block.equals(block5) && list.getNode(4).block.equals(block4) && list.getNode(3).block.equals(block3) && list.getNode(2).block.equals(block) && list.getNode(1).block.equals(block2) && list.getSize() == 5;
+            actual += list.getNode(4).block.equals(block5) && list.getNode(3).block.equals(block4) && list.getNode(2).block.equals(block3) && list.getNode(1).block.equals(block) && list.getNode(0).block.equals(block2) && list.getSize() == 5;
         } catch (IllegalArgumentException e) {
             actual = TesterMessagesEnum.ERROR + " IllegalArgumentException: " + e.getMessage();
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("try to get an index that is larger than size", expected, actual);
+        return this.tester.test("Try to get an index that is larger than size", expected, actual);
     }
 
     ///// Get Block /// 
@@ -722,7 +722,7 @@ public class TestHandler {
         String expected = "true";
         String actual = "";
         try {
-            actual += list.getBlock(5).equals(block5) && list.getBlock(4).equals(block4) && list.getBlock(3).equals(block3) && list.getBlock(2).equals(block) && list.getBlock(1).equals(block2) && list.getSize() == 5;
+            actual += list.getBlock(4).equals(block5) && list.getBlock(3).equals(block4) && list.getBlock(2).equals(block3) && list.getBlock(1).equals(block) && list.getBlock(0).equals(block2) && list.getSize() == 5;
         } catch (IllegalArgumentException e) {
             actual = TesterMessagesEnum.ERROR + " IllegalArgumentException: " + e.getMessage();
         } catch (Exception e) {
@@ -860,7 +860,7 @@ public class TestHandler {
         String expected = "true";
         String actual = "";
         try {
-            actual += list.getFirst().block.equals(block2) && list.getLast().block.equals(block) && list.getSize() == 4 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block3, block, block4}));
+            actual += list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.getSize() == 4 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block3, block, block4}));
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -882,7 +882,7 @@ public class TestHandler {
         String expected = "true";
         String actual = "";
         try {
-            actual += list.getNode(2).block.equals(block5) && list.getFirst().block.equals(block2) && list.getLast().block.equals(block) && list.getSize() == 5 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block5, block3, block4, block}));
+            actual += list.getNode(2).block.equals(block5) && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.getSize() == 5 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block3, block5, block4, block}));
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
