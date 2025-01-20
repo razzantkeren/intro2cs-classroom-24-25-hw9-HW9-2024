@@ -1,0 +1,124 @@
+{
+  "tests": [
+    {   
+      "name": "LinkedList class. Adds the given memory block to the beginning of this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_ADD_FIRST",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Adds the given memory block to the end of this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_ADD_LAST",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Gets the memory block located at the given index in this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_GET_NODE",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Gets the memory block located at the given index in this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_GET_BLOCK",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Adds the given memory block to this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_ADD",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Gets the index of the node pointing to the given memory block.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_INDEX_OF",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 6
+    },
+    {
+      "name": "LinkedList class. Removes the given node from this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_REMOVE_NODE",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 8
+    },
+    {
+      "name": "LinkedList class. Removes the given memory block from this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_REMOVE_ELEMENT",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 8
+    },
+    {
+      "name": "LinkedList class. Removes the node at the given index from this list.",
+      "setup": "javac Test.java",
+      "run": "java Test LINKED_LIST_REMOVE_INDEX",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 8
+    },
+    {
+      "name": "MemorySpace class. Allocates a memory block of the given size.",
+      "setup": "javac Test.java",
+      "run": "java Test MEMORY_SPACE_MALLOC",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "MemorySpace class. Frees the memory block at the given address.",
+      "setup": "javac Test.java",
+      "run": "java Test MEMORY_SPACE_FREE",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "MemorySpace class. Defragments the memory space.",
+      "setup": "javac Test.java",
+      "run": "java Test MEMORY_SPACE_DEFRAG",
+      "comparison": "included",
+      "input": "",
+      "output": "All test cases have passed",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
