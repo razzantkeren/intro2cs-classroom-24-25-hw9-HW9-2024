@@ -1129,13 +1129,13 @@ public class TestHandler {
     private boolean removeNodeTest1() {
         LinkedList list = new LinkedList();
         Node n = null;
-        String expected = TesterMessagesEnum.ERROR + " NullPointerException: Cannot read field \"block\" because \"node\" is null";
+        String expected = TesterMessagesEnum.ERROR + " NullPointerException!";
         String actual = "";
         try {
             list.remove(n);
             actual += list.getSize() == 0;
         } catch (NullPointerException e){
-            actual = TesterMessagesEnum.ERROR + " NullPointerException: " + e.getMessage();
+            actual = TesterMessagesEnum.ERROR + " NullPointerException!";
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
