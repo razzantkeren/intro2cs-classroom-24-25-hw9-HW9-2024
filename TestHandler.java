@@ -13,7 +13,7 @@ public class TestHandler {
             case LINKED_LIST_GET_BLOCK:
                 return 8;
 
-            case LINKED_LIST_ADD: 
+            case LINKED_LIST_ADD:
                 return 8;
 
             case LINKED_LIST_ADD_LAST:
@@ -530,7 +530,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Try to get an index that is equal to size", expected, actual);
+        return this.tester.test("try to get an index that is equal to size", expected, actual);
     }
 
     private boolean getNodeTest7() {
@@ -554,7 +554,7 @@ public class TestHandler {
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
-        return this.tester.test("Try to get an index that is larger than size", expected, actual);
+        return this.tester.test("try to get an index that is larger than size", expected, actual);
     }
 
     ///// Get Block /// 
@@ -1129,7 +1129,7 @@ public class TestHandler {
     private boolean removeNodeTest1() {
         LinkedList list = new LinkedList();
         Node n = null;
-        String expected = "true";
+        String expected = TesterMessagesEnum.ERROR + " NullPointerException: Cannot read field \"block\" because \"node\" is null";
         String actual = "";
         try {
             list.remove(n);
@@ -1278,7 +1278,7 @@ public class TestHandler {
             list.remove(list.getNode(1)); // block removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block) == -1);
             list.remove(list.getNode(0)); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -1328,7 +1328,7 @@ public class TestHandler {
             list.remove(list.getNode(3)); // block4 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block3) && list.indexOf(block4) == -1);
             list.remove(list.getNode(0)); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block3) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block3) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -1432,7 +1432,7 @@ public class TestHandler {
             list.remove(list.getNode(3)); // block5 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.indexOf(block5) == -1);
             list.remove(list.getNode(0)); // block2 removed
-            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
+            actual += (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block4) && list.indexOf(block2) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
@@ -1461,10 +1461,10 @@ public class TestHandler {
             list.remove(list.getNode(2)); // block4 removed
             actualB = (actualB && list.getSize() == 3 && list.getFirst().block.equals(block2) && list.getLast().block.equals(block5) && list.indexOf(block4) == -1);
             list.remove(list.getNode(0)); // block2 removed
-            actualB = (actualB && list.getSize() == 2 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block5) && list.indexOf(block2) == -1);
+            actualB = (actualB && list.getSize() == 2 && list.getFirst().block.equals(block) && list.getLast().block.equals(block5) && list.indexOf(block2) == -1);
             list.remove(list.getNode(1)); // block5 removed
-            actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block3) && list.getLast().block.equals(block3) && list.indexOf(block5) == -1);
-            list.remove(list.getNode(0)); // block3 removed
+            actualB = (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block) && list.indexOf(block5) == -1);
+            list.remove(list.getNode(0)); // block removed
             actual += (actualB && list.getSize() == 0 && list.getFirst() == null && list.getLast() == null && list.indexOf(block3) == -1);
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
@@ -1477,13 +1477,15 @@ public class TestHandler {
         MemoryBlock block = new MemoryBlock(10, 1000);
         list.addFirst(block);
         MemoryBlock block2 = new MemoryBlock(20, 2000);
-        String expected = "true";
+        String expected = TesterMessagesEnum.ERROR + " IllegalArgumentException: index must be between 0 and size";
         boolean actualB = true;
         String actual = "";
         try {
             actualB = (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block));
-            list.remove(block2);
+            list.remove(list.getNode(list.indexOf(block2)));
             actual += (actualB && list.getSize() == 1 && list.getFirst().block.equals(block) && list.getLast().block.equals(block));
+        } catch (IllegalArgumentException e) {
+            actual = TesterMessagesEnum.ERROR + " IllegalArgumentException: " + e.getMessage();
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
