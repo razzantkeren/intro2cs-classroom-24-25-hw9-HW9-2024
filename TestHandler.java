@@ -882,7 +882,7 @@ public class TestHandler {
         String expected = "true";
         String actual = "";
         try {
-            actual += list.getNode(2).block.equals(block5) && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.getSize() == 5 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block3, block5, block4, block}));
+            actual += list.getNode(2).block.equals(block5) && list.getFirst().block.equals(block2) && list.getLast().block.equals(block4) && list.getSize() == 5 && compareLinkedLists(list, createLinkedList(new MemoryBlock[]{block2, block3, block5, block, block4}));
         } catch (Exception e) {
             actual = TesterMessagesEnum.ERROR + e.getMessage();
         }
