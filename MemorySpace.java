@@ -48,7 +48,7 @@ public class MemorySpace {
 	 * are set to 250 and 17, respectively, and the base address and length
 	 * of the found free block are set to 267 and 3, respectively.
 	 * ss
-	 * (4) The new memory block is returned.
+	 * (4) The new memory bloxck is returned.
 	 * 
 	 * If the length of the found block is exactly the same as the requested length, 
 	 * then the found block is removed from the freeList and appended to the allocatedList.
