@@ -258,7 +258,7 @@ public class LinkedList {
 		if (index == size-1) {
 			last= c;
 		}
-		c.next=c.next.next;
+		c.next= c.next.next;
 		size--;
 	}
 
